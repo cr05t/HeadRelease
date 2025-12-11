@@ -1,6 +1,6 @@
-import heroImage from 'figma:asset/335759665c498aaf3b075e4114032f191443c2ae.png';
-
 export function HeroSection() {
+  const heroImage = "https://images.unsplash.com/photo-1709633694594-30f42ddbf669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGhlYWx0aCUyMGlsbHVzdHJhdGlvbnxlbnwxfHx8fDE3NjU0MzQxMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080";
+  
   return (
     <section className="relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -18,10 +18,10 @@ export function HeroSection() {
               繰り返す頭痛に、さよならを。
             </h1>
             <p className="text-white/90 max-w-md mb-8">
-              最新AIがあなたの頭痛パターンを解析し、最適な解決策を提案します。
+              最新技術によりあなたの頭痛パターンを解析し、最適な解決薬を提案します。
             </p>
             <button className="bg-green-500 text-white px-8 py-3 rounded hover:bg-green-600 transition">
-              詳しく見る
+              購入
             </button>
           </div>
         </div>
