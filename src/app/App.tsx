@@ -353,12 +353,6 @@ export default function App() {
           
           <p className="mb-6 opacity-60">Copyright © Shionogi Healthcare Co., Ltd. All Rights Reserved.</p>
           
-          <div className="bg-gray-200 dark:bg-gray-800 p-4 rounded text-left text-[10px] leading-relaxed">
-            本サイトでは、アクセス解析およびサイトの利便性の向上のためにクッキー（Cookie）を使用しています。クッキーの設定変更および詳細についてはこちらをご覧ください。本サイトの閲覧を続けることで、クッキーの使用を同意したとみなされます。
-            <button className="ml-2 border border-gray-400 px-2 py-0.5 rounded bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-              OK
-            </button>
-          </div>
         </div>
       </footer>
 
