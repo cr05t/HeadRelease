@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function App() {
+  const [showConsent, setShowConsent] = useState(false);
+
+  useEffect(() => {
+    const accepted = localStorage.getItem("cookie-consent") === "accepted";
+    if (!accepted) setShowConsent(true);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#F2F2F2] dark:bg-[#1a202c] text-gray-700 dark:text-gray-200 transition-colors duration-200 font-noto">
       {/* Navigation */}
@@ -360,6 +367,32 @@ export default function App() {
       <a className="fixed bottom-6 right-6 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center text-gray-400 dark:text-gray-200 hover:shadow-lg transition" href="#">
         <span className="material-icons text-sm">arrow_upward</span>
       </a>
+
+      {/* Cookie Consent Popup */}
+      {showConsent && (
+        <div className="fixed bottom-0 left-0 w-full bg-[#EBEBEB] text-gray-700 dark:text-gray-200 shadow-2xl p-4 sm:p-5 text-xs z-[999] border-t border-gray-300 dark:border-gray-700">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full">
+            <p className="leading-relaxed flex-1">
+              本サイトでは、アクセス解析およびサイトの利便性の向上のためにクッキー（Cookie）を使用しています。クッキーの設定変更および詳細については{" "}
+              <a className="text-primary font-semibold underline" href="/content/dam/shionogi/jp/pdf/cookie-notice.pdf">
+                こちら
+              </a>
+              をご覧ください。本サイトの閲覧を続けることで、クッキーの使用を同意したとみなされます。
+            </p>
+            <div className="flex justify-end">
+              <button
+                className="px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-[#EBEBEB] hover:bg-gray-200 transition"
+                onClick={() => {
+                  localStorage.setItem("cookie-consent", "accepted");
+                  setShowConsent(false);
+                }}
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
